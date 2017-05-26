@@ -1,6 +1,7 @@
 ﻿using MatrixRotator.Exceptions;
 using MatrixRotator.Providers;
 using MatrixRotator.Rotators;
+using MatrixRotator.Tests.Infrastructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -18,8 +19,8 @@ namespace MatrixRotator.Tests
         [TestInitialize()]
         public void ApplicationTestsInitialize()
         {
-            _matrixSource = MatrixHelper.GetMatrix(5);
-            _matrixResult = MatrixHelper.GetMatrix(5);
+            _matrixSource = MatrixHelper.GetMatrix();
+            _matrixResult = MatrixHelper.GetMatrix();
 
             _rotationProviderMock = new Mock<IRotatorProvider>();
             _rotatorMock = new Mock<IRotator>();

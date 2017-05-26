@@ -3,6 +3,7 @@ using System.IO;
 using System.Text;
 using MatrixRotator.Exceptions;
 using MatrixRotator.Providers;
+using MatrixRotator.Tests.Infrastructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -21,7 +22,7 @@ namespace MatrixRotator.Tests
         [TestInitialize()]
         public void MatrixHandlerTestsInitialize()
         {
-            _matrixSource = MatrixHelper.GetMatrix(5);
+            _matrixSource = MatrixHelper.GetMatrix();
             _optionsMock = new Mock<IOptions>();
             _optionsMock.SetupGet(o => o.InputFile).Returns(_inputFileName);
             _optionsMock.SetupGet(o => o.OutputFile).Returns(_outputFileName);

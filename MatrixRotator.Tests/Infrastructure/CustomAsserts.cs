@@ -2,7 +2,7 @@
 using MatrixRotator.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace MatrixRotator.Tests
+namespace MatrixRotator.Tests.Infrastructure
 {
     public static class MatrixAssert
     {

@@ -50,7 +50,7 @@ namespace MatrixRotator.Providers
                 }
                 return list.Select(
                         a => a.Split(',').Select(Int32.Parse).ToArray()
-                    ).ToArray();;
+                    ).ToArray();
             }
             catch (FileNotFoundException ex)
             {

@@ -3,23 +3,19 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace MatrixRotator.Tests
+namespace MatrixRotator.Tests.Infrastructure
 {
     public static class MatrixHelper
     {
-        public static int[][] GetMatrix(int size)
+        public static int[][] GetMatrix()
         {
-            var matrix = new int[size][];
-            for (var row = 0; row < size; row++)
-            {
-                matrix[row] = new int[size];
-                for (var column = 0; column < size; column++)
-                {
-                    matrix[row][column] = row + size * column;
-                }
-            }
-
-            return matrix;
+return ConvertFromText(
+@"1,2,3,4,5
+6,7,8,9,10
+11,12,13,14,15
+16,17,18,19,20
+21,22,23,24,25"
+);
         }
 
         public static string ToText(this int[][] matrix)
@@ -35,6 +31,15 @@ namespace MatrixRotator.Tests
         public static string ToText(this MemoryStream stream)
         {
             return new StreamReader(stream).ReadToEnd();
+        }
+
+        public static int[][] ConvertFromText(string text)
+        {
+            return text.Replace("\r\n","|")
+                .Split('|')
+                .Select(
+                        a => a.Split(',').Select(Int32.Parse).ToArray()
+                    ).ToArray();
         }
     }
 }

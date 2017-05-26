@@ -59,10 +59,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CustomAsserts.cs" />
+    <Compile Include="Infrastructure\CustomAsserts.cs" />
+    <Compile Include="Infrastructure\MatrixHelper.cs" />
+    <Compile Include="Rotator180Tests.cs" />
+    <Compile Include="Rotator270Tests.cs" />
+    <Compile Include="Rotator90Tests.cs" />
+    <Compile Include="RotatorBaseTests.cs" />
     <Compile Include="MatrixHandlerTests.cs" />
     <Compile Include="ApplicationTests.cs" />
-    <Compile Include="MatrixHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +78,7 @@
       <Name>MatrixRotator</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
